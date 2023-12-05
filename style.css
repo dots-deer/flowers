@@ -541,9 +541,8 @@ margin: 0 auto;
 
 
 @media only screen and (max-width: 600px) {
-  /* Adjust styles for small screens */
+  /* Styles for screens up to 600 pixels wide (adjust as needed) */
   #calendar {
-    width: 100%; /* Make the calendar take the full width of the screen */
-    margin: 0;   /* Remove any margin that might be causing the shift */
+    scale: 80%;    
   }
 }

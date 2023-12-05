@@ -546,3 +546,8 @@ margin: 0 auto;
     scale: 80%;    
   }
 }
+
+.full-width-container {
+  width: 100%;
+  overflow-x: hidden;
+}

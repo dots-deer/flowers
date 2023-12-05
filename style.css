@@ -66,6 +66,7 @@ body {
   margin: 0 auto;
   height: 57.0em;
   overflow: hidden;
+  scale: 80%;
 }
 
 .header {

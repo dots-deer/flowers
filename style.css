@@ -1,9 +1,43 @@
 *, *:before, *:after {
 -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
+html{
+  font-size: 62.5%;
+}
+
+.wrapper{
+  margin: 0 auto;
+
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(197, 163, 134, 1);
+  padding-left: 2em;
+}
+
+
+nav{
+  margin: 4em;
+}
+nav ul{
+  list-style-type: none;
+  display: flex;
+  gap: 4em;
+  margin: 0;
+}
+
+nav ul li a{
+  text-decoration: none;
+  font-size: 2rem;
+  color: white;
+  font-family: "arsenal", sans-serif;
+}
 
 body {
- overflow: hidden;
+ overflow: auto;
  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
  font-weight: 100;
  color: rgba(54, 47, 39,1);
@@ -16,15 +50,21 @@ body {
  -moz-user-select: none;
  -ms-user-select: none;
  user-select: none;
+ 
 }
+
+.buffer{
+  margin: 4em;
+}
+
 
 #calendar {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  width: 420px;
+  width: 42.0em;
   margin: 0 auto;
-  height: 570px;
+  height: 57.0em;
   overflow: hidden;
 }
 
@@ -42,10 +82,11 @@ body {
 .header h1 {
   margin: 0;
   padding: 0;
-  font-size: 20px;
+  font-size: 2.0rem;
   line-height: 50px;
   font-weight: 100;
   letter-spacing: 1px;
+  font-family: "arsenal", sans-serif;
 }
 
 .left, .right {
@@ -133,7 +174,7 @@ body {
 }
 
 .day-name {
-  font-size: 9px;
+  font-size: 0.9rem;
   text-transform: uppercase;
   margin-bottom: 5px;
   color: rgba(113, 106, 100, 0.8);
@@ -141,7 +182,7 @@ body {
 }
 
 .day-number {
-  font-size: 24px;
+  font-size: 2.4rem;
   letter-spacing: 1.5px;
 }
 
@@ -170,8 +211,8 @@ body {
 .orange { background: rgba(247, 167, 0, 1); }
 .green { background: rgba(153, 198, 109, 1); }
 .yellow { background: rgba(249, 233, 0, 1); }
-.red { background: rgba(225, 53, 53, 1); } /* Red */
-.purple { background: rgba(159, 90, 253, 1);} /* Purple */
+.red { background: rgba(225, 53, 53, 1); } 
+.purple { background: rgba(159, 90, 253, 1);}
 .teal { background: rgba(0, 128, 128, 1); }
 .pink { background: rgba(255, 182, 193, 1); }
 
@@ -214,7 +255,7 @@ body {
   padding: 7px 0;
   overflow-y: auto;
   overflow-x: hidden;
-  color: rgba(244, 243, 241,1);
+  color: rgba(244, 243, 241, 1);
 }
 
 .events.in {
@@ -242,7 +283,7 @@ body {
 }
 
 .event {
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 22px;
   letter-spacing: .5px;
   padding: 2px 16px;
@@ -280,7 +321,7 @@ body {
 .entry {
   position: relative;
   padding: 0 0 0 25px;
-  font-size: 13px;
+  font-size: 1.3rem;
   display: inline-block;
   line-height: 30px;
   background: transparent;
@@ -397,3 +438,110 @@ body {
 
 
 
+
+nav ul li, .sitelogo {
+    animation: seeIn 1.2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    animation-delay: 0.3s; 
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+@keyframes seeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+#derrick {
+  stroke-dasharray: 692.5;
+  stroke-dashoffset: 629.5;
+  animation: sign 3.7s ease;
+  animation-fill-mode: forwards;
+}
+
+
+
+@keyframes sign {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(197, 163, 134, 1);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.igso {
+  width: 2.5em;
+  height: 2.5em;
+  margin-left: 1.4em;
+}
+
+.my_name {
+  font-size: 2.6rem;
+  font-family: "Arsenal", sans-serif;
+  color: #eee;
+}
+
+.hero_section {
+  margin-left: 2em;
+  max-width: 15em;
+  font-size: 4.5rem;
+  font-family: "Arsenal", sans-serif;
+
+}
+
+@media screen and (max-width: 43rem) {
+  .hero_section {
+    font-size: 2.4rem; 
+    max-width: 14em;
+  }
+}
+
+
+.about_div {
+  margin-left: 6em;
+max-width: 75em;
+display: flex;
+align-items: center;
+margin: 0 auto;
+
+}
+.about {
+  
+  font-size: 6rem;
+  font-family: "Arsenal", sans-serif;
+  justify-content: center;
+  display: flex;
+
+}
+
+@media screen and (max-width: 740px) {
+  .about {
+    font-size: 3rem; 
+    max-width: 14em;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 43rem) {
+  /* Styles for screens up to 600 pixels wide (adjust as needed) */
+  #calendar {
+    scale: 88%;    
+  }
+}

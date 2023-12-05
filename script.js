@@ -17,7 +17,8 @@
         self.openDay(current);
       }, 500);
     }
-    
+    //if current month has 6 rows, somehow push the legend down a row aswell.
+    this.spaceToFit();
   }
 
   Calendar.prototype.draw = function() {
@@ -64,10 +65,15 @@
       this.oldMonth.className = 'month out ' + (self.next ? 'next' : 'prev');
       this.oldMonth.addEventListener('webkitAnimationEnd', function() {
         self.oldMonth.parentNode.removeChild(self.oldMonth);
+    //new month element
         self.month = createElement('div', 'month');
         self.backFill();
         self.currentMonth();
         self.fowardFill();
+        //if i need to fit more shit; increase #calendar height!
+        self.spaceToFit();
+        
+    //append new month element
         self.el.appendChild(self.month);
         window.setTimeout(function() {
           self.month.className = 'month in ' + (self.next ? 'next' : 'prev');
@@ -106,6 +112,23 @@
       this.drawDay(clone.add('days', 1));
     }
   }
+ 
+  Calendar.prototype.spaceToFit = function() {
+    if(this.countWeeksInMonth() === 5) {
+      
+    var fiveRows = document.getElementById("calendar");
+    fiveRows.style.height ="57.0em";
+    }
+    else {var sixRows = document.getElementById("calendar");
+    sixRows.style.height ="64.0em";} 
+  };
+
+  Calendar.prototype.openFirstDay = function() {
+    var firstDayElement = document.querySelector('.day');
+    if (firstDayElement) {
+      this.openDay(firstDayElement);
+    }
+  };
 
   Calendar.prototype.currentMonth = function() {
     var clone = this.current.clone();
@@ -149,6 +172,25 @@
     outer.appendChild(events);
     this.week.appendChild(outer);
   }
+
+  Calendar.prototype.countWeeksInMonth = function() {
+    // Get the first day of the month
+    var firstDayOfMonth = this.current.clone().startOf('month');
+
+    // Get the last day of the month
+    var lastDayOfMonth = this.current.clone().endOf('month');
+
+    // Count the number of weeks between the first and last day of the month
+    var weeksInMonth = lastDayOfMonth.week() - firstDayOfMonth.week() + 1;
+
+    // Adjust for cases where the last week may spill into the next month
+    if (weeksInMonth < 0) {
+        weeksInMonth = 52 - firstDayOfMonth.week() + lastDayOfMonth.week() + 1;
+    }
+
+    return weeksInMonth;
+  }
+  
 //IDIOT ABSTRACTION: use method-filter day events- prettys text with SPAN!
   Calendar.prototype.drawEvents = function(day, element) {
     if(day.month() === this.current.month()) {
@@ -306,7 +348,7 @@
   Calendar.prototype.nextMonth = function() {
     this.current.add('months', 1);
     this.next = true;
-    this.draw();
+    this.draw();  
   }
 
   Calendar.prototype.prevMonth = function() {
@@ -343,7 +385,7 @@
     { eventName: 'Canola Fields', calendar: 'Canola', color: 'yellow', duration:'mid-August - September' , date: '2024-09-17', blogLink: '/blogPages/canola.html' },
   ];
 
-  
+
 //can we get a [more info here] anchor tag?
   
 
@@ -352,3 +394,27 @@
 }();
 
 
+/*
+The MIT License (MIT)
+
+Copyright (c) 2023 Paul Navasard (https://codepen.io/peanav/pen/xxKWzG)
+Fork of an original work Event Calendar Widget (non demo) (https://codepen.io/peanav/pen/xxKWzG)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/

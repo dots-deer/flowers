@@ -7,6 +7,7 @@
         <title>Perth Flower Blooming Calendar</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arsenal">
+        <link rel="stylesheet" href="formstyle.css">
         <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
       </head>
   
@@ -15,7 +16,7 @@
       <header>
           
 
-        <a href="../flowers" class="sitelogo">
+        <a href="../" class="sitelogo">
           <div>
             <svg width="137" height="62" viewBox="0 0 137 62" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path id="derrick"
@@ -36,27 +37,37 @@
       </header>
     </div>
 
-
+    <div class="t2mDiv">
+      <p class="talk2me">
+        Hey again! <br>
+        Feel free to message me for anything:)
+      </p>
+    </div>
 
 
       
     <!--   UNIQUE INFORMATION GOES HERE   -->
-    <form
+    <form class="form"
     action="https://formspree.io/f/mrgwwnzr"
     method="POST"
-  >
+  > 
     <label>
-      Your email:
-      <input type="email" name="email">
+      Name
+      <input type="text" name="name" placeholder="Your name goes here!"/>
     </label>
     <label>
-      Your message:
-      <textarea name="message"></textarea>
+      Email
+      <input type="email" name="email" placeholder="Your email please:)">
+    </label>
+    <label>
+      Message
+      <textarea name="message" placeholder="Shoot me any message you want here!"></textarea>
     </label>
     <!-- your other form fields go here -->
     <button type="submit">Send</button>
   </form>
    
+    <div class="bufferLarge"></div>
       <div class="footer">
         <div><p class="my_name">Derrick You</p></div>
         <a href="https://www.instagram.com/dots_deer/" target="_blank" class="sqs-svg-icon--wrapper instagram-unauth" aria-label="Instagram">

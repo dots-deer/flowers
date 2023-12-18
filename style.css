@@ -66,12 +66,11 @@ body {
   margin: 0 auto;
   height: 57.0em;
   overflow: hidden;
-  scale: 80%;
 }
 
 .header {
-  height: 50px;
-  width: 420px;
+  height: 5em;
+  width: 42em;
   color:#F4F3F1;
   border-radius: 12px 12px 2px 2px;
   background: rgba(197, 163, 134, 1);
@@ -473,11 +472,10 @@ nav ul li, .sitelogo {
 
 
 .footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 1rem;
+  padding: 0.2rem;
   background-color: rgba(197, 163, 134, 1);
   text-align: center;
   display: flex;
@@ -505,12 +503,6 @@ nav ul li, .sitelogo {
 
 }
 
-@media screen and (max-width: 43rem) {
-  .hero_section {
-    font-size: 2.4rem; 
-    max-width: 14em;
-  }
-}
 
 
 .about_div {
@@ -538,14 +530,72 @@ margin: 0 auto;
 }
 
 
-
-
 @media only screen and (max-width: 43rem) {
-  /* Styles for screens up to 600 pixels wide (adjust as needed) */
+  /* at 430px */
+  .hero_section {
+    font-size: 2.4rem; 
+    max-width: 14em;
+  }
   #calendar {
-    scale: 80%;    
+    scale: 1.8;  
+  }
+  nav ul li a {
+    font-size: 1.4rem;
   }
 }
+
+@media only screen and (max-width: 37rem) {
+    /* at 370px */
+  #calendar {
+    scale: 0.7; 
+    margin: 0 0 0 -2rem;
+    position: relative;
+    top: -60px;
+  }
+  nav ul li a {
+    font-size: 1.3rem;
+  }
+  .full-width-container{
+    height: 50em;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 24rem) {
+  /* at 240px */
+  #calendar {
+    scale: 0.62;  
+    margin: 0 0 0 -3rem;
+    position: relative;
+    top: -100px;
+  }
+  nav ul li a {
+    font-size: 1.2rem;
+  }
+  .buffer {
+    margin: 0em;
+  }
+  .hero_section {
+    font-size: 2.2rem;
+  }
+  .full-width-container{
+    height: 45em;
+    overflow: hidden;
+  }
+}
+
+
+@media only screen and (max-width: 20rem) {
+  /* at 200px */
+  #calendar {
+    scale: 0.5;  
+  }
+  nav ul li a {
+    font-size: 1rem;
+  }
+  
+}
+
 
 .full-width-container {
   width: 100%;

@@ -376,6 +376,8 @@
     { eventName: 'Crooked brook Sunflowers', calendar: 'Sunflowers', color: 'yellow', duration:'January', date: '2024-01-12', blogLink: '/blogPages/sunflower.html' },
     { eventName: 'Crooked brook Sunflowers', calendar: 'Sunflowers', color: 'yellow', duration:'January', date: '2024-01-13', blogLink: '/blogPages/sunflower.html' },
     { eventName: 'Crooked brook Sunflowers', calendar: 'Sunflowers', color: 'yellow', duration:'January', date: '2024-01-14', blogLink: '/blogPages/sunflower.html' },
+    { eventName: 'Crooked brook Sunflowers', calendar: 'Sunflowers', color: 'yellow', duration:'January', date: '2024-02-31', blogLink: '/blogPages/sunflower.html' },
+    
 
     { eventName: 'Everlastings Kings Park Festival', calendar: 'Variety', color: 'green', duration:'Sep 15 - Oct 1', date: '2024-09-15', blogLink:'/blogPages/Everlastings.html' },
  

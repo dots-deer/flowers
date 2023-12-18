@@ -1,0 +1,137 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 55%;
+    margin: 0 auto 100px;
+    padding: 45px;
+    border-radius: 10px;
+  }
+
+  .form label{
+    font-weight: 700;
+    font-size: 2rem;
+    font-family: "arsenal", sans-serif;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+      /* Customize the placeholder text styles */
+      opacity: 80%;
+      color: #402A25;
+  }
+
+  .form input {
+    display: block;
+    font-family: "arsenal", sans-serif;
+    outline: 0;
+    background: white;
+    width: 100%;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 2px solid rgba(197, 163, 134, 1);
+  }
+
+  .form textarea {
+    font-family: "arsenal", sans-serif;
+    outline: 0;
+    background: white;
+    width: 100%;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    line-height: 1.2; 
+    font-size: 14px;
+    height: 8em;
+    border-radius: 10px;
+    border: 2px solid rgba(197, 163, 134, 1);
+  }
+
+  
+.form button {
+  border-radius: 10px;
+    font-family: "arsenal", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background:#593A28;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  .form button:hover,.form button:active,.form button:focus {
+    background: #402312;
+  }
+
+
+  .t2mDiv {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.talk2me {
+  font-weight: 600;
+  font-size: 4.5rem;
+  font-family: "Arsenal", sans-serif;
+  width: auto;
+}
+
+.bufferLarge {
+  height: 5.4rem;
+}
+
+
+@media screen and (max-width: 900px) {
+  .form {
+    max-width: 75%;
+  }
+}
+
+
+@media screen and (min-width: 1700px) {
+  .form {
+    max-width: 40%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .talk2me {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .talk2me {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .talk2me {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .talk2me {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .talk2me {
+    font-size: 1.9rem;
+  }
+}
+

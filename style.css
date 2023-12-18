@@ -527,6 +527,10 @@ margin: 0 auto;
     font-size: 3rem; 
     max-width: 14em;
   }
+
+  #calendar {
+  scale: 0.9;
+  }
 }
 
 

@@ -1,4 +1,5 @@
 import calendar
+import re
 from datetime import datetime
 
 def lastDayOfMonth(year, month):
@@ -8,7 +9,7 @@ def lastDayOfMonth(year, month):
 sourceText = input('Give the previous year source text to base off from: ')
 
 # asks user for start bloom dates and formats it in the variable bloomStartDate
-bloomStartDate = input("start of blooming (format -> dd,mm,yyyy): ")
+bloomStartDate = input("start of blooming (format -> dd,mm,yyyy): ") 
 bloomStartDate=bloomStartDate.replace(" ", "")
 bloomStartDate=bloomStartDate.split(',')
 print(bloomStartDate)
@@ -94,22 +95,18 @@ def firstTemplate(data):
     part1 = data[start_index:end_index].strip()
     return part1
 
-def lastTemplate (eventInfo):
-    # Find the index of 'blogLink'
-    start_index_blog_link = eventInfo.find("blogLink: ")
-    if start_index_blog_link != -1:
-        start_index_blog_link += len("blogLink: ")
-    # Find the index of the closing single quote after 'blogLink'
-    end_index_blog_link = eventInfo.find("'", start_index_blog_link)
-    # Extract the desired substring
-    extracted_blog_link = eventInfo[start_index_blog_link:end_index_blog_link].strip()
-    return extracted_blog_link
+def lastTemplate(eventInfo):
+    match = re.search(r"blogLink:\s*'([^']+)'", eventInfo)
+    if match:
+        extracted_blog_link = match.group(1)
+        return extracted_blog_link
+    return None
 
 
 def formatEntry(part1, part2, arrayOfDates):
     masterEntryArray = []
     for i in arrayOfDates:
-        singleEntry = f'{{{part1} {i}, {part2} }},'
+        singleEntry = f"{{eventName: {part1} date: '{i}', blogLink: '{part2}' }},"
         masterEntryArray.append(singleEntry)
     return masterEntryArray
 #{ eventName: 'Crooked brook Sunflowers', calendar: 'Sunflowers', color: 'yellow', duration:'January', date: '2024-01-13', blogLink: '/blogPages/sunflower.html' },

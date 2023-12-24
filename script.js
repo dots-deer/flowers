@@ -117,10 +117,10 @@
     if(this.countWeeksInMonth() === 5) {
       
     var fiveRows = document.getElementById("calendar");
-    fiveRows.style.height ="57.0em";
+    fiveRows.style.height ="64.0em";
     }
     else {var sixRows = document.getElementById("calendar");
-    sixRows.style.height ="64.0em";} 
+    sixRows.style.height ="72.0em";} 
   };
 
   Calendar.prototype.openFirstDay = function() {
